@@ -23,6 +23,8 @@ namespace ProductApps
         Product cProduct;
         private const decimal DeliveryCharge = 25.00m; // Fixed delivery charge
         private const decimal WrapCharge = 5.00m;// Fixed wrap charge
+        private const decimal GSTRate = 0.1m; // 10% GST
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,6 +45,9 @@ namespace ProductApps
 
             decimal totalWrapCharge = totalCharge + WrapCharge;
             totalWrapChargeTextBlock.Text = Convert.ToString(totalWrapCharge);
+
+            decimal totalChargeAfterGST = totalWrapCharge * (1 + GSTRate);
+            totalGSTTextBlock.Text = Convert.ToString(totalChargeAfterGST);
         }
     
         private void clearButton_Click(object sender, RoutedEventArgs e)
