@@ -22,7 +22,7 @@ namespace ProductApps
     {
         Product cProduct;
         private const decimal DeliveryCharge = 25.00m; // Fixed delivery charge
-
+        private const decimal WrapCharge = 5.00m;// Fixed wrap charge
         public MainWindow()
         {
             InitializeComponent();
@@ -40,8 +40,11 @@ namespace ProductApps
             // Calculate total charge including delivery charge and display it
             decimal totalCharge = cProduct.TotalPayment + DeliveryCharge;
             totalChargeTextBlock.Text = Convert.ToString(totalCharge);
-        }
 
+            decimal totalWrapCharge = totalCharge + WrapCharge;
+            totalWrapChargeTextBlock.Text = Convert.ToString(totalWrapCharge);
+        }
+    
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             productTextBox.Text = "";

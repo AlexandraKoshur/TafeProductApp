@@ -23,6 +23,12 @@
         <TextBlock Name="totalChargeTextBlock" HorizontalAlignment="Left" Height="23" 
                    Margin="200,210,0,0" TextWrapping="Wrap" Text="" 
                    VerticalAlignment="Top" Width="100"/>
-
+        
+        <!-- Wrap Charge -->
+        <Label Content="Total Charge after adding &#xD;&#xA;the wrap charge ($5):" HorizontalAlignment="Left" Height="50" Margin="40,240,0,0" 
+               VerticalAlignment="Top" Width="250"/>
+        
+        <TextBlock Name="totalWrapChargeTextBlock" HorizontalAlignment="Left" Height="23" Margin="200,245,0,0" 
+                   TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
