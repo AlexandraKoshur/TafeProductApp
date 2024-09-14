@@ -21,6 +21,7 @@ namespace ProductApps
     public partial class MainWindow : Window
     {
         Product cProduct;
+        private const decimal DeliveryCharge = 25.00m; // Fixed delivery charge
 
         public MainWindow()
         {
@@ -29,16 +30,16 @@ namespace ProductApps
 
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
-                cProduct.calTotalPayment();
-                totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Enter data again", "Data Entry Error");
-            }
+            // Create a Product instance and calculate total payment
+            cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
+            cProduct.calTotalPayment();
+
+            // Update the Total Payment text block
+            totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
+
+            // Calculate total charge including delivery charge and display it
+            decimal totalCharge = cProduct.TotalPayment + DeliveryCharge;
+            totalChargeTextBlock.Text = Convert.ToString(totalCharge);
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
@@ -53,5 +54,6 @@ namespace ProductApps
         {
             this.Close();
         }
+
     }
 }

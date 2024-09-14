@@ -15,6 +15,14 @@
         <Button Name="clearButton" Content="C_lear" HorizontalAlignment="Left" Height="34" Margin="327,209,0,0" VerticalAlignment="Top" Width="122" Click="clearButton_Click"/>
         <Button Name="closeButton" Content="Cl_ose" HorizontalAlignment="Left" Height="34" Margin="327,264,0,0" VerticalAlignment="Top" Width="122" Click="closeButton_Click"/>
 
+        <!-- New label and text block for Total Charge -->
+        <Label Content="Total Charge after adding &#xA;the delivery charge ($25):" 
+               HorizontalAlignment="Left" Height="50" Margin="40,200,0,0" 
+               VerticalAlignment="Top" Width="250" />
+
+        <TextBlock Name="totalChargeTextBlock" HorizontalAlignment="Left" Height="23" 
+                   Margin="200,210,0,0" TextWrapping="Wrap" Text="" 
+                   VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>
